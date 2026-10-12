@@ -1,0 +1,9 @@
+# Paths from the previous site, kept alive so old links and search results still land.
+/page/3-services        /services        301
+/page/3-about-us        /#about          301
+/page/1-coming-soon     /projects        301
+/testimonial            /testimonials    301
+/instant_valuation      /valuation       301
+/privacy_policy         /privacy         301
+/blogs                  /                301
+/index.html             /                301

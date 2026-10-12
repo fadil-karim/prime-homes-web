@@ -1,0 +1,21 @@
+The Prime Homes site is rebuilt as a modern static site and released as v1.0 on main, with the original logo kept and every feature from primegroupuk.com carried over.
+
+**What changed**
+- A new design: a full-width photo hero of Dafforne Road, a search card, services, featured properties, the Prime Home app section, testimonials, the accreditation logos and a proper footer. The crimson and green come from the logo, the type is Fraunces and Inter, and it works properly on phones.
+- Search and listings: the home page search routes to the sales or lettings page, which keeps the full filter set from the old site (location, category, price, bedrooms, bathrooms, reception rooms, property type, features and price sorting). Filters are reflected in the URL so a search can be shared.
+- A page for each of the three current listings, with photo gallery and lightbox, key facts, description, map, share links, a request-a-viewing form and the customer portal link. Let properties stay on the home page as recent activity but drop out of search results, as before.
+- Instant valuation, contact, services, upcoming projects, testimonials, mortgages, privacy policy and a themed 404 page. Old addresses such as /instant_valuation and /page/3-services redirect to their new homes.
+- Forms open the visitor's email app with the enquiry filled in and addressed to info@primehomesuk.com, because a static site has no server. A form service or a small Worker can be added later if direct inbox delivery is wanted.
+- The repository is a Cloudflare Workers static-assets site: everything served lives in public/ with no build step, plus security headers, redirects, robots and a sitemap. Listings live in tools/properties.json and a short script regenerates the pages, so adding a property is a data edit.
+
+**Verified**
+- The Cloudflare dry-run deploy passes and every local link resolves on disk.
+- Screenshots of all 14 pages at desktop and phone width, plus browser checks of the mobile menu, the filters and URL sync, the empty state and reset, home search routing, the gallery and lightbox, viewing modal validation and the contact form, with no console errors.
+- Google Fonts could not be fetched from this environment, so the screenshots show the fallback serif. The font links are standard and will load in production.
+
+**Left out, on purpose**
+- The old News page only held placeholder text and Meet the team was an empty link, so neither was carried over.
+- The Dafforne Road floor plan image could not be extracted from the old site. It can be added to that property page once the file is to hand.
+- The cookie banner is gone: the site runs no analytics and sets no cookies of its own. The Google Maps embeds on the contact and property pages are the only third-party content, so if strict cookie consent matters they can be swapped for a static map or loaded on click. The privacy policy text is carried over as it was.
+
+**Next step for you**: connect the repository in the Cloudflare dashboard (Workers & Pages, Create, Import a repository, pointing at main) and add the domain. From then on every push to main deploys. The release text below is ready for the GitHub release.
